@@ -1,0 +1,13 @@
+{%extends "polls/base.html"%}
+{%block content%}
+<div class=content-section>
+    <form method='POST'>
+        {% csrf_token %}
+       <h2>You want to delete the post- {{object.title}} </h2>
+        <div>
+        <button type="submit" class="btn btn-danger">delete post</button>
+        <a class="btn btn-outline-secondary" href="{%url 'detailpost' object.id %}">cancel</a>
+        </div>
+      </form>
+</div>
+{%endblock%}
